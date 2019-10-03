@@ -15,9 +15,19 @@ var Lab4 = ( function() {
              * currency codes, separated by colons and formatted to two decimal
              * places.  (See the screenshot given with this assignment.)
              */
-
-            // INSERT YOUR CODE HERE
-
+            
+            var list = rates["rates"];
+            var today = rates["date"];
+            var userInput = document.getElementById('input').value;
+            
+            for(var key in list) {
+                var calcNum = list[key] * userInput;
+                var fixNum = calcNum.toFixed(2);
+                document.getElementById('output').innerHTML += ("<p>" + key + ": " + fixNum + " </p>");
+            }
+            
+            document.getElementById('output').innerHTML += ("<p> Based on " + today + " Exchange Rates </p>");
+            
         },
         
         getConversion: function() {
