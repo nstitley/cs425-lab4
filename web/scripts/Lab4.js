@@ -27,7 +27,6 @@ var Lab4 = ( function() {
             }
             
             document.getElementById('output').innerHTML += ("<p> Based on " + today + " Exchange Rates </p>");
-            
         },
         
         getConversion: function() {
