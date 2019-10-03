@@ -4,6 +4,8 @@ import com.opencsv.CSVReader;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.StringReader;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Iterator;
 import java.util.List;
 import org.json.simple.JSONObject;
@@ -106,9 +108,9 @@ public class Rates {
             /* Create JSON Containers */
             
             JSONObject json = new JSONObject();
-            JSONObject rates = new JSONObject();            
+            JSONObject rates = new JSONObject(); 
             
-            /* 
+             /* 
              * Add rate data to "rates" container and add "date" and "base"
              * values to "json" container.  See the "getRatesAsTable()" method
              * for an example of how to get the CSV data from the list, and
@@ -116,9 +118,28 @@ public class Rates {
              *
              * *** INSERT YOUR CODE HERE ***
              */
+             
+            LocalDate date = LocalDate.now();
+            String today = DateTimeFormatter.ofPattern("yyyy/MM/dd").format(date);
+            
+            row = iterator.next();
+
+            while (iterator.hasNext()) {
+            
+                row = iterator.next();
+                
+                String code = row[1];
+                double numRate = Double.parseDouble(row[2]);
+                
+                rates.put(code, numRate);
+            
+            }
+        
+            json.put("date", today);
+            json.put("base", "USD");
             
             json.put("rates", rates);
-            
+     
             /* Parse top-level container to a JSON string */
             
             results = JSONValue.toJSONString(json);
