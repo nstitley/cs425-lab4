@@ -12,7 +12,7 @@ var Lab4 = ( function() {
              * each rateby the given number of U.S. Dollars, and compute the
              * corresponding amount for each currency.  These amounts should be
              * shown in the "output" element of the page, along with the
-             * currency codes, separated by colons and formatted to two decimal
+             * currency codes, separated by colons and formatted to 2 decimal
              * places.  (See the screenshot given with this assignment.)
              */
             
