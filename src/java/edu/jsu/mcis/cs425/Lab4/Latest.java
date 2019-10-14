@@ -25,8 +25,7 @@ public class Latest extends HttpServlet {
         
         String path = getServletContext().getRealPath(File.separator + Rates.RATE_FILENAME);
         
-        try (PrintWriter out = response.getWriter()) {
-            
+        try (PrintWriter out = response.getWriter()) {            
             out.println(Rates.getRatesAsJson( request.getParameter("code")) );
         } catch (NamingException ex) {
             Logger.getLogger(Latest.class.getName()).log(Level.SEVERE, null, ex);

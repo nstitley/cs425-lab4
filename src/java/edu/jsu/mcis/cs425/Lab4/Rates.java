@@ -161,7 +161,7 @@ public class Rates {
         return (results.trim());
         
     }
-    
+   
     public static String getRatesAsJson(String code) throws NamingException, SQLException, ClassNotFoundException, InstantiationException {
             
             Context envContext = null, initContext = null;
@@ -214,8 +214,7 @@ public class Rates {
             results = JSONValue.toJSONString(json);
             
             return (results.trim());
-           
+            
     }
-
+    
 }
-
