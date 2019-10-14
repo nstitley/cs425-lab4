@@ -1,6 +1,5 @@
 package edu.jsu.mcis.cs425.Lab4;
 
-import com.mysql.cj.protocol.Resultset;
 import com.opencsv.CSVReader;
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -12,9 +11,6 @@ import java.util.List;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
 import java.sql.*;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
